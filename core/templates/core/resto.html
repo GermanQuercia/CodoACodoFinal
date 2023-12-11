@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restó Pizzería</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+
+    <!--icono pagina-->
+    <link rel="shortcut icon" href="./img/porcion de pizza.png" type="image/x-icon">
+
+    <!--Fuente de google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <!--Aqui para el logo-->
+        <div class="header-logo">
+            <img src="../../static/core/img/pizza grande completa.png" alt="logo Restaurante">
+            <img src="../../static/core/img/cocinero.png" alt="logo Restaurante" id="logo-rotativo">
+        </div>
+
+        <button id="abrir" class="abrir-menu"><img src="../../static/core/img/menu.png" alt=""></button>
+        <nav id="nav" class="nav">
+            <button class="cerrar-menu" id="cerrar"><img src="../../static/core/img/cerrar.png" alt=""></i></button>
+            <ul class="nav-list">
+                <li><a href="/">Restó</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/delicias">Delicias</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <ul class="slider">
+            <li id="Resto">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../../static/core/img/imagen 1.jpg" alt="Pizza">
+                        </td>
+                        <td>
+                            <div>
+                                <h2>Restó Pizzería</h2>
+                                <p>La historia comienza en 1932, cuando nuestros abuelos abren una panadería en
+                                    Palermo. Habían venido en barco desde Génova, Italia.</p>
+                                <p> Tenían dos hijos: Giancarlo Agustín y Gianluca José. Cuenta la historia que ahí, en
+                                    el horno de la panadería, se hicieron las primeras pizzas de Buenos Aires.</p>
+                                <p> Unos años después fue tomando forma el restaurante.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+        </ul>
+    </main>
+
+    <footer class="footer-container">
+        <div>
+            <h4 class="footer-texto">Restó Pizzería <br />Copyright 2023</h4>
+        </div>
+        <div class="footer-derecha">
+            <div><img src="../../static/core/img/chat.png" alt="cell-phone" class="footer-celular"></div>
+            <a href="http://facebook.com" target="_blank"><img src="../../static/core/img/face.png" alt="Facebook"
+                    class="footer-face"></a>
+            <a href="http://instagram.com" target="_blank"><img src="../../static/core/img/insta.png" alt="Facebook"
+                    class="footer-insta"></a>
+            <a href="http://twitter.com" target="_blank"><img src="../../static/core/img/x.png" alt="Twitter"
+                    class="footer-x"></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><img src="../../static/core/img/wsp.png" alt="WhatsApp"
+                    class="footer-wsp"></a>
+        </div>
+    </footer>
+
+    <script src="{% static 'core/script/hamb.js' %}"></script>
+
+</body>
+
+</html>

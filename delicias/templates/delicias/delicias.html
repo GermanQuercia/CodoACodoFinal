@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restó Pizzería</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+
+    <!--icono pagina-->
+    <link rel="shortcut icon" href="./img/porcion de pizza.png" type="image/x-icon">
+
+    <!--Fuente de google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <!--Aqui para el logo-->
+        <div class="header-logo">
+            <img src="../../static/core/img/pizza grande completa.png" alt="logo Restaurante">
+            <img src="../../static/core/img/cocinero.png" alt="logo Restaurante" id="logo-rotativo">
+        </div>
+
+        <button id="abrir" class="abrir-menu"><img src="../../static/core/img/menu.png" alt=""></button>
+        <nav id="nav" class="nav">
+            <button class="cerrar-menu" id="cerrar"><img src="../../static/core/img/cerrar.png" alt=""></i></button>
+            <ul class="nav-list">
+                <li><a href="/">Restó</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/delicias">Delicias</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="height: 410px; overflow-y: scroll; overflow-x: hidden;">
+        <div class="main" style="width: 80%; padding: 10px 10%;">
+            <ul class="slider">
+
+                <li id="Delicias">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../../static/core/img/delicias.jpg" alt="Delicias">
+                            </td>
+                            <td>
+                                <h2>Delicias</h2>
+                                <p>Te invitamos a descubrir todas nuestras exclusivas recetas. Contamos con amplia
+                                    variedad
+                                    de pizzas: tradicionales, exclusivas, exóticas. Todas inspiradas originalmente
+                                    en los mas exquisitos gustos de Italia.</p>
+                                <p>Usamos solo ingredientes orgánicos, de nuestra propia huerta, y cuidadosamente
+                                    seleccionados.</p>
+                                <p>Probalas...
+                                    ¡Vas a querer volver siempre!</P>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+
+            </ul>
+        </div>
+
+        {% for project in projects %}
+        <div class="main" style="width: 80%; padding: 10px 10%;">
+            <br>
+            <ul class="slider">
+
+                <li id="Delicias">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="{{project.image.url}}" alt="Delicias">
+                            </td>
+                            <td>
+                                <h2>{{project.title}}</h2>
+                                <p>{{project.descripcion}}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+
+            </ul>
+
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <footer class="footer-container">
+        <div>
+            <h4 class="footer-texto">Restó Pizzería <br />Copyright 2023</h4>
+        </div>
+        <div class="footer-derecha">
+            <div><img src="../../static/core/img/chat.png" alt="cell-phone" class="footer-celular"></div>
+            <a href="http://facebook.com" target="_blank"><img src="../../static/core/img/face.png" alt="Facebook"
+                    class="footer-face"></a>
+            <a href="http://instagram.com" target="_blank"><img src="../../static/core/img/insta.png" alt="Facebook"
+                    class="footer-insta"></a>
+            <a href="http://twitter.com" target="_blank"><img src="../../static/core/img/x.png" alt="Twitter"
+                    class="footer-x"></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><img src="../../static/core/img/wsp.png" alt="WhatsApp"
+                    class="footer-wsp"></a>
+        </div>
+    </footer>
+
+    <script src="{% static 'core/script/hamb.js' %}"></script>
+
+</body>
+
+</html>
