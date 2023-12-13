@@ -1,105 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'core/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restó Pizzería</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'core/css/slider.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+{% block content %}
 
-    <!--icono pagina-->
-    <link rel="shortcut icon" href="../../static/core/img/porcion de pizza.png" type="image/x-icon">
+<main class="main">
+    <ul class="slider">
+        <li id="Contacto">
+            <table>
+                <tr>
+                    <td>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.80786040467!2d-58.42086829037722!3d-34.5837279728487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb581ee271433%3A0x14662e44a8d925ad!2sAv.%20Sta.%20Fe%203900%2C%20C1425BHN%20CABA!5e0!3m2!1ses!2sar!4v1698014817161!5m2!1ses!2sar"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </td>
+                    <td>
+                        <div class="formulario">
+                            <h2>¡Hacé tu Reserva!</h2>
+                            <form onsubmit="return validarFormulario()" action="https://formspree.io/f/xgejdvyy"
+                                method="POST">
+                                <div class="items-form">
+                                    <label for="name">Nombre</label><br />
+                                    <input type="text" id="name" name="nombre" placeholder="Nombre y Apellido">
+                                </div>
+                                <div class="items-form">
+                                    <label for="email">Email</label><br />
+                                    <input type="email" id="email" name="email" placeholder="nombre@mail.com">
 
-    <!--Fuente de google-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet">
-</head>
+                                </div>
+                                <div class="items-form">
+                                    <label for="mensaje">Reserva</label><br />
+                                    <textarea name="mensaje" id="mensaje" cols="18" rows="3"
+                                        placeholder="Solicitar día y horario"></textarea>
+                                </div><br>
+                                <div>
+                                    <button class="enviar" type="submit">Enviar</button>
+                                    <br /><br />
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+</main>
 
-<body>
-    <header class="header">
-        <!--Aqui para el logo-->
-        <div class="header-logo">
-            <img src="../../static/core/img/pizza grande completa.png" alt="logo Restaurante">
-            <img src="../../static/core/img/cocinero.png" alt="logo Restaurante" id="logo-rotativo">
-        </div>
-
-        <button id="abrir" class="abrir-menu"><img src="../../static/core/img/menu.png" alt=""></button>
-        <nav id="nav" class="nav">
-            <button class="cerrar-menu" id="cerrar"><img src="../../static/core/img/cerrar.png" alt=""></i></button>
-            <ul class="nav-list">
-                <li><a href="/">Restó</a></li>
-                <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="/delicias">Delicias</a></li>
-                <li><a href="/contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="main">
-        <ul class="slider">
-            <li id="Contacto">
-                <table>
-                    <tr>
-                        <td>
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.80786040467!2d-58.42086829037722!3d-34.5837279728487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb581ee271433%3A0x14662e44a8d925ad!2sAv.%20Sta.%20Fe%203900%2C%20C1425BHN%20CABA!5e0!3m2!1ses!2sar!4v1698014817161!5m2!1ses!2sar"
-                                style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </td>
-                        <td>
-                            <div class="formulario">
-                                <h2>¡Hacé tu Reserva!</h2>
-                                <form onsubmit="return validarFormulario()" action="https://formspree.io/f/xgejdvyy"
-                                    method="POST">
-                                    <div class="items-form">
-                                        <label for="name">Nombre</label><br />
-                                        <input type="text" id="name" name="nombre" placeholder="Nombre y Apellido">
-                                    </div>
-                                    <div class="items-form">
-                                        <label for="email">Email</label><br />
-                                        <input type="email" id="email" name="email" placeholder="nombre@mail.com">
-
-                                    </div>
-                                    <div class="items-form">
-                                        <label for="mensaje">Reserva</label><br />
-                                        <textarea name="mensaje" id="mensaje" cols="18" rows="3"
-                                            placeholder="Solicitar día y horario"></textarea>
-                                    </div><br>
-                                    <div>
-                                        <button class="enviar" type="submit">Enviar</button>
-                                        <br /><br />
-                                    </div>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-        </ul>
-    </main>
-
-    <footer class="footer-container">
-        <div>
-            <h4 class="footer-texto">Restó Pizzería <br />Copyright 2023</h4>
-        </div>
-        <div class="footer-derecha">
-            <div><img src="../../static/core/img/chat.png" alt="cell-phone" class="footer-celular"></div>
-            <a href="http://facebook.com" target="_blank"><img src="../../static/core/img/face.png" alt="Facebook"
-                    class="footer-face"></a>
-            <a href="http://instagram.com" target="_blank"><img src="../../static/core/img/insta.png" alt="Facebook"
-                    class="footer-insta"></a>
-            <a href="http://twitter.com" target="_blank"><img src="../../static/core/img/x.png" alt="Twitter"
-                    class="footer-x"></a>
-            <a href="https://web.whatsapp.com/" target="_blank"><img src="../../static/core/img/wsp.png" alt="WhatsApp"
-                    class="footer-wsp"></a>
-        </div>
-    </footer>
-
-    <script src="{% static 'core/script/hamb.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock %}

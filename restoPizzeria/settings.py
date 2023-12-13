@@ -125,5 +125,5 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
-MEDIA_ROTE = os.path.join(BASE_DIR , "media")
+MEDIA_URL = '/pizzas_media/'
+MEDIA_ROUTE = os.path.join(BASE_DIR, "pizzas_media")
