@@ -1,3 +1,7 @@
 Pillow==5.0.0
 django==2.02 
+<<<<<<< HEAD
 django-ckeditor==5.4.0
+=======
+django-ckeditor==5.4.0
+>>>>>>> d2761245a31e30acfe4c8852db1942d6cd47ff21
