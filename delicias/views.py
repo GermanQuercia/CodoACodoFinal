@@ -3,5 +3,5 @@ from .models import Project
 # Create your views here.
 
 def delicias(request):
-    projects = Project.objects.all()
-    return render(request, "delicias/delicias.html", {'projects':projects})
+    Projects = Project.objects.all()
+    return render(request, "delicias/delicias.html", {'Projects':Projects})

@@ -1,0 +1,284 @@
+main {
+    display: flex;
+    padding: 5px 10%;
+    min-height: 400px;
+}
+
+.slider {
+    margin: auto;
+    width: 100%;
+    overflow: visible;
+}
+
+ul.slider {
+    position: relative;
+    height: 395px;
+    display: flex;
+    align-content: space-around;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    background-color: rgb(255, 238, 173);
+    overflow: hidden;
+    z-index: -1;
+}
+
+ul.slider img {
+    min-width: 100%;
+    height: 428px;
+    object-fit: cover;
+    box-shadow: inset 0px 0px 20px 15px #ffeead;
+}
+
+ul.slider iframe {
+    min-width: 95%;
+    height: 400px;
+    object-fit: fill;
+    box-shadow: inset 0px 0px 20px 15px #ffeead;
+    overflow: scroll;
+    scroll-snap-type: mandatory;
+}
+
+ul.slider li:first-child {
+    z-index: 1;
+}
+
+ul.slider li:target {
+    z-index: 1;
+}
+
+table {
+    display: flex;
+    justify-content: space-between;
+}
+
+table td:nth-child(1) {
+    width: 60%;
+    position: absolute;
+    left: 40%;
+    padding: 0px 3%;
+}
+
+table td:nth-child(2) {
+    width: 38%;
+    height: 395px;
+    position: absolute;
+    text-align: center;
+    background-color: rgb(255, 227, 227);
+    box-shadow: inset 0px 0px 20px 15px rgb(255, 147, 147);
+    padding: 0px 2%;
+    border-radius: 8px;
+    overflow: auto;
+    scroll-snap-type: mandatory;
+    scroll-behavior: smooth;
+}
+
+table h2 {
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.8rem;
+    color: rgb(255, 152, 152);
+    text-shadow: 0px 0px 3px black, 2px 2px 6px white;
+    text-decoration: dashed;
+    font-weight: bolder;
+    letter-spacing: 0px;
+}
+
+table p {
+    font-family: 'Josefin Slab', serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 3px black, 2px 2px 6px white;
+    font-size: 1.35rem;
+    letter-spacing: -1px;
+}
+
+.formulario div label {
+    font-family: 'Josefin Slab', serif;
+    text-shadow: #000000 2px 2px 5px;
+    z-index: 5;
+    object-fit: fill;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 3px black, 2px 2px 6px white;
+    font-size: 1.35rem;
+}
+
+.formulario h2 {
+    color: rgb(255, 152, 152);
+    text-shadow: 0px 0px 3px black, 2px 2px 6px white;
+    text-decoration: dashed;
+    font-weight: bold;
+    text-shadow: 3px rgb(255, 255, 255);
+}
+
+textarea {
+    resize: none;
+    color: rgb(251, 72, 72);
+    font-family: 'Josefin Slab', serif;
+}
+
+::-webkit-input-placeholder {
+    color: rgb(251, 72, 72);
+    font-family: 'Josefin Slab', serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+::-moz-placeholder {
+    color: rgb(251, 72, 72);
+    font-family: 'Josefin Slab', serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+:-ms-input-placeholder {
+    color: rgb(251, 72, 72);
+    font-family: 'Josefin Slab', serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Oculta la barra de desplazamiento horizontal */
+::-webkit-scrollbar {
+    height: 16px;
+    /* Ajusta el tamaño de la barra de desplazamiento vertical según tus necesidades */
+    width: 12px;
+    /* Ajusta el tamaño de la barra de desplazamiento horizontal según tus necesidades */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 147, 147);
+    /* Color de fondo de la barra de desplazamiento */
+    border-radius: 8px;
+    /* Borde redondeado de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-button {
+    background-color: rgb(255, 255, 255);
+    ;
+    /* Oculta los botones de la barra de desplazamiento (flechas hacia arriba y hacia abajo) */
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(255, 147, 147);
+    /* Color de fondo del área de la barra de desplazamiento */
+}
+
+#name,
+#email {
+    color: rgb(251, 72, 72);
+    font-family: 'Josefin Slab', serif;
+}
+
+header a {
+    font-family: 'Josefin Slab', serif;
+    color: rgb(251, 72, 72);
+    text-shadow: #000000 2px 2px 5px;
+    font-size: 1.7rem;
+    letter-spacing: -1.5px;
+}
+
+
+
+@media screen and (max-width: 640px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    ul.slider iframe {
+        visibility: hidden;
+    }
+
+    ul.slider img {
+        visibility: hidden;
+    }
+
+    table td:nth-child(2) {
+        width: 95%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/imagen\ 1.jpg");
+    }
+
+
+}
+
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .header-menu {
+        display: none;
+    }
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
+    .abrir-menu {
+        background-color: transparent;
+    }
+
+    .cerrar-menu {
+        background-color: transparent;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2rem;
+        z-index: 5;
+    }
+
+    .abrir-menu img {
+        height: 75px;
+        width: 75px;
+    }
+
+    .cerrar-menu img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .abrir-menu img:hover,
+    .cerrar-menu img:hover {
+        scale: 1.1;
+    }
+
+    .nav.visible {
+        background-color: transparent;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .invisible {
+        opacity: 0;
+        background-color: transparent;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #d46666ec;
+    }
+}

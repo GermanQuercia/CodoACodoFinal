@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lpb!61!azx6ofhcr%+x%jw&+@g$73l=l%m^egrc&)bvc50!2zv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["germanquercia.pythonanywhere.com","localhost","127.0.0.1"]
 
 
 # Application definition
@@ -76,10 +76,25 @@ WSGI_APPLICATION = 'restoPizzeria.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'GermanQuercia$pizzas',
+        'USER': 'GermanQuercia',
+        'PASSWORD': 'Tumama10++',
+        'HOST': 'GermanQuercia.mysql.pythonanywhere-services.com',  # O la dirección de tu servidor MySQL
+        'PORT': '3306',       # El puerto que estás usando para MySQL
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
@@ -119,11 +134,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/pizzas_media/'
-MEDIA_ROUTE = os.path.join(BASE_DIR, "pizzas_media")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
